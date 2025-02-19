@@ -1,0 +1,189 @@
+<!-- # @Author: Wahid Ari <wahidari>
+# @Date:   8 January, 5:05
+# @Copyright: (c) wahidari 2017 -->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Kontak | Dispendukcapil Nusukan</title>
+    <link rel="shortcut icon" href="images/nusukan.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!-- font Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- Main Styles CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+
+  <body>
+    <div class="shadow">
+      <nav class="navbar navbar-fixed navbar-inverse form-shadow">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index">
+              <img
+                alt="Brand"
+                sizes="20px"
+                src="images/nusukan.png"
+                style="width: 35px; height: auto"
+              />
+            </a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div
+            class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1"
+          >
+            <ul class="nav navbar-nav">
+              <li><a href="index">HOME</a></li>
+              <li><a href="lapor">LAPOR</a></li>
+              <li><a href="lihat">LIHAT PENGADUAN</a></li>
+              <li class="active"><a href="">KONTAK</a></li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+
+      <!-- content -->
+      <div class="main-content">
+        <h3>Kontak</h3>
+        <hr />
+        <style>
+          #map {
+            position: relative; /* Pastikan peta tidak fixed */
+            z-index: 0; /* Pastikan berada di bawah navbar */
+            margin-top: 20px; /* Beri jarak agar tidak menempel */
+          }
+        </style>
+        <div class="row">
+          <div class="col-md-6">
+            <div
+              id="map"
+              class="card-shadow-2"
+              style="width: 100%; height: 300px"
+            ></div>
+            <script>
+              var map = L.map("map").setView([-7.542522, 110.819436], 13);
+              L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                attribution:
+                  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+              }).addTo(map);
+            </script>
+          </div>
+
+          <div class="col-md-6"></div>
+        </div>
+        <hr />
+        <h4>Kantor</h4>
+        <p>
+          Jl.Sriwijaya Utara II No.6 , Kel.Nusukan, Kec. Banjarsari ,Kota
+          Surakarta (57135)
+        </p>
+        <hr />
+        <h4>Contact Info:</h4>
+        <p>☎️(0271) 718879<br /></p>
+        <p>nusukan@surakarta.go.id</p>
+        <p>&nbsp;</p>
+
+        <!-- link to top -->
+        <a id="top" href="#" onclick="topFunction()">
+          <i class="fa fa-arrow-circle-up"></i>
+        </a>
+        <script>
+          // When the user scrolls down 100px from the top of the document, show the button
+          window.onscroll = function () {
+            scrollFunction();
+          };
+          function scrollFunction() {
+            if (
+              document.body.scrollTop > 100 ||
+              document.documentElement.scrollTop > 100
+            ) {
+              document.getElementById("top").style.display = "block";
+            } else {
+              document.getElementById("top").style.display = "none";
+            }
+          }
+
+          // When the user clicks on the button, scroll to the top of the document
+          function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+          }
+        </script>
+        <!-- link to top -->
+
+        <!-- end main-content -->
+      </div>
+
+      <hr />
+      <!-- Footer -->
+      <footer class="footer text-white py-4">
+        <div class="container">
+          <div class="row">
+            <!-- Bagian Kantor (Kiri) -->
+            <div class="col-md-6 text-md-start text-center mb-3">
+              <h4 class="text-uppercase mb-3">
+                <i class="fa fa-map-marker me-2"></i> Kantor
+              </h4>
+              <p class="mb-0">
+                Jl. Sriwijaya Utara II No.6, Kel. Nusukan, Kec. Banjarsari, Kota
+                Surakarta (57135)
+              </p>
+            </div>
+
+            <!-- Bagian Kontak (Kanan) -->
+            <div class="col-md-6 text-md-end text-center">
+              <h4 class="text-uppercase mb-3">
+                <i class="fa fa-envelope-o me-2"></i> Kontak
+              </h4>
+              <p class="mb-0">
+                ☎️ (0271) 718879 <br />
+                nusukan@surakarta.go.id
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Copyright -->
+      <div class="text-center text-white py-3">
+        <small>v-6.0 | Copyright &copy; Dispendukcapil Nusukan</small>
+      </div>
+
+      <!-- shadow -->
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>
